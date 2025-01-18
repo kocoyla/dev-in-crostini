@@ -1,4 +1,5 @@
 (message "Emacs 28.2 in Crostini in acer chromebook spin 311 -- 2025.01.18")
+(message "Crouton did not work. This is too new an OS rev. :()."
 (message "In init.el in .emacs.d in HOME which is /home/koco")
 (ido-mode 't)
 
@@ -20,6 +21,13 @@
 ;; ./magit-installation-warnings.txt
 
 (setq package-install-upgrade-built-in t)
+
+;; C-x i runs the command ido-insert-file, which is an interactive native-compiled Lisp function in ‘ido.el’.
+;; It is bound to C-x i, <menu-bar> <file> <insert-file>.
+;; (ido-insert-file)
+(fset 'bb-copy-line-to-other-window
+   (kmacro-lambda-form [?\C-  ?\C-e escape ?w ?\C-x ?o ?\C-y return ?\C-x ?o ?\C-f] 0 "%d"))
+(global-set-key "i" 'bb-copy-line-to-other-window)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

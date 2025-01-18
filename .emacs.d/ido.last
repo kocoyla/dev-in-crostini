@@ -1,0 +1,39 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/koco/" . ".emacs.d/")
+ ("/home/koco/src/kojo/installer/" . "licenses/")
+ ("/home/koco/src/kojo/" . "installer/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/koco/.emacs.d/"
+ "/home/koco/src/kojo/installer/licenses/"
+ "/home/koco/src/kojo/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "LICENSE"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/koco/.emacs.d/" (26507 60792 368932 842000) "init.el" "ido.last" "elpa/" "auto-save-list/" "eln-cache/" "../" "./")
+
+ ("/home/koco/" (26507 60645 274597 241000) ".Xauthority" ".lesshst" ".bash_aliases" ".bash_aliases~" ".bashrc" ".bashrc~" ".emacs.d/" "sudo_apt_list.out" ".viminfo" ".python_history" "kojo" "workFiles/" "gcodeFiles/" "EZCUT0.6.25" "Downloads/" "src/" ".gervill/" ".sudo_as_admin_successful" ".bash_history" ".kojo/" ".gnome/" "Koco/" ".java/" ".cache/" ".local/" ".sommelierrc" ".profile" ".config/" ".bash_logout" "../" "./")
+
+ ("/usr/share/info/emacs/" (26379 33 927113 413000) "transient.info.gz" "efaq.info.gz" "../" "./")
+
+ ("/home/koco/src/kojo/installer/licenses/" (26379 1043 527081 832000) "Kojoi-license.txt" "Kojo-license.txt" "Kojo-examples-license.txt" "turtle-image-license.txt" "tiled-license.txt" "table-layout.txt" "scratch-license.txt" "scalatest-LICENSE.txt" "scalariform-license.txt" "scala-license.txt" "rhino-LICENSE.txt" "processing-license.txt" "piccolo-license.txt" "openjdk-license.txt" "jssc-license.txt" "jlayer-license.txt" "jlatexmath-license.txt" "jhlabs-filters-license.txt" "jfugue-license.txt" "httpunit-license.txt" "hamcrest-license.txt" "h2-license.txt" "flatlaf-license.txt" "doodle-LICENSE.txt" "docking-frames-license.txt" "delaunay-triangulator-license.txt" "akka-license.txt" "RSyntaxTextArea.License.txt" "JTS-license.txt" "../" "./")
+
+ ("/home/koco/src/kojo/installer/" (26379 1043 526081 832000) "jarlist.txt" "winlauncher-for-zip.xml" "licenses/" "icons/" "examples/" "create-jarlist.kojo" "cp-staging-jars.scala" "bin/" "../" "./")
+
+ ("/home/koco/src/kojo/" (26379 1043 522081 832000) "build.sbt" ".scalafmt.conf" "stage-i4j-installer" "src/" "scala-tr/" "sbt.sh" "sbt-launch.1.5.5.jar" "project/" "makezip.sh" "make-windows-zip.sh" "localization.md" "lib/" "l10n-level2/" "installer/" "installer.i4j/" "README.md" "LICENSE" ".gitignore" ".git/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
