@@ -109,3 +109,48 @@ fibo -all
 ./fibo -all 10
 ./fibo -all 100
 ./fibo 100
+pwd
+ls
+emacs &
+git
+pwd
+ls
+pwd
+emacs &
+cd
+git branch -m main
+git status
+which emacs
+gs
+git status
+git remote add origin https://github.com/kocoyla/dev-in-crostini.git
+git push -u origin main
+git pull
+git pull origin main
+git config pull.ff only
+git pull origin main
+git config pull.rebase false
+git pull origin main
+git pull --rebase origin main
+git push -u origin main
+alias gs='git status'
+gs
+git push
+git config help
+git config user
+git config
+git config --global
+git config --get user
+git config --global --get user
+git config --global user.name "Ben Bulent Basaran"
+git config --global user.email kocoyla.ogren@gmail.com
+git config --global user.name "Kocoyla Ogren"
+cat .git/config 
+git push
+git remote -v
+git remote set-url origin git@github.com:kocoyla/dev-in-crostini
+git push
+git remote -v
+git remote set-url origin https://github.com/kocoyla/dev-in-crostini.git
+git remote -v
+git push
