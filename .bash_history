@@ -154,3 +154,75 @@ git remote -v
 git remote set-url origin https://github.com/kocoyla/dev-in-crostini.git
 git remote -v
 git push
+cd 
+sh Downloads/Koco_unix_2_9_30-r9-tr-3-20250118_with_jre.sh
+git pull
+git pull --rebase
+git config --global credential.helper store
+git config --global credential.helper cache
+git push
+cd src
+ls
+ll
+git clone https://github.com/kocoyla/koco.git
+ls
+ll
+du -h *
+cd koco
+ls
+git branch
+git branch -r
+git co origin/turkish_keywords_2.13.x
+git checkout origin/turkish_keywords_2.13.x
+gs
+git checkout master
+git remote -v
+git branch -r
+git branch
+git switch origin/turkish_keywords_2.13.x
+git remote -v
+git branch -r
+git fetch
+git branch -v -a
+git switch turkish_keywords_2.13.x
+sudo apt-list
+sudo apt-get
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get list
+sudo apt list
+exit
+curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup
+sudo apt-get update
+sudo apt-get dist-upgrade -y
+sudo apt-get install default-jdk
+sudo apt-get install sbt
+sudo apt-get install scala
+scala
+java -v
+java --version
+curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup
+curl -s https://get.coursier.io | bash -s -- -v
+echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
+echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee /etc/apt/sources.list.d/sbt_old.list
+curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo apt-key add
+sudo apt-get update
+pwd
+mkdir tmp
+cd tmp
+sbt
+echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
+echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee /etc/apt/sources.list.d/sbt_old.list
+curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo apt-key add
+sudo apt-get update
+sudo apt-get install sbt
+sbt
+cd ../src/koco/
+./sbt.sh clean package
+sbt
+exit
+emacs &
+java
+uname -a
+sudo apt install curl
+top

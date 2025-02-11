@@ -1,0 +1,696 @@
+Kocoyu çalıştırmak için koco takma adını dene.
+koco@penguin:~$ curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 22.2M  100 22.2M    0     0  12.9M      0  0:00:01  0:00:01 --:--:-- 16.5M
+The current machine does not support all of the following CPU features that are required by the image: [CX8, CMOV, FXSR, MMX, SSE, SSE2, SSE3, SSSE3, SSE4_1, SSE4_2, POPCNT, LZCNT, AVX, AVX2, BMI1, BMI2, FMA].
+Please rebuild the executable with an appropriate setting of the -march option.koco@penguin:~$ 
+koco@penguin:~$ sudo apt-get update
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Get:2 https://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+Hit:3 https://deb.debian.org/debian-security bookworm-security InRelease
+Ign:4 https://storage.googleapis.com/cros-packages/132 bookworm InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/132 bookworm Release
+Fetched 55.4 kB in 5s (10.2 kB/s)
+Reading package lists... Done
+koco@penguin:~$ sudo apt-get dist-upgrade -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Calculating upgrade... Done
+The following NEW packages will be installed:
+  cros-motd
+The following packages will be upgraded:
+  cros-guest-tools
+1 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 12.7 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Get:1 https://storage.googleapis.com/cros-packages/132 bookworm/main amd64 cros-motd all 1.0 [1,744 B]
+Get:2 https://storage.googleapis.com/cros-packages/132 bookworm/main amd64 cros-guest-tools all 0.40 [11.0 kB]
+Fetched 12.7 kB in 0s (56.3 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+Selecting previously unselected package cros-motd.
+(Reading database ... 48506 files and directories currently installed.)
+Preparing to unpack .../archives/cros-motd_1.0_all.deb ...
+Unpacking cros-motd (1.0) ...
+Preparing to unpack .../cros-guest-tools_0.40_all.deb ...
+Unpacking cros-guest-tools (0.40) over (0.39) ...
+Setting up cros-motd (1.0) ... inst
+Setting up cros-guest-tools (0.40) ...
+koco@penguin:~$ sudo apt-get install default-jdk
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  ca-certificates-java default-jdk-headless default-jre default-jre-headless fonts-dejavu-extra java-common libatk-wrapper-java
+  libatk-wrapper-java-jni libice-dev libnspr4 libnss3 libpcsclite1 libpthread-stubs0-dev libsm-dev libx11-dev libxau-dev libxcb1-dev libxdmcp-dev
+  libxt-dev openjdk-17-jdk openjdk-17-jdk-headless openjdk-17-jre openjdk-17-jre-headless x11proto-dev xorg-sgml-doctools xtrans-dev
+Suggested packages:
+  libice-doc pcscd libsm-doc libx11-doc libxcb-doc libxt-doc openjdk-17-demo openjdk-17-source visualvm libnss-mdns fonts-ipafont-gothic
+  fonts-ipafont-mincho fonts-wqy-microhei | fonts-wqy-zenhei fonts-indic
+The following NEW packages will be installed:
+  ca-certificates-java default-jdk default-jdk-headless default-jre default-jre-headless fonts-dejavu-extra java-common libatk-wrapper-java
+  libatk-wrapper-java-jni libice-dev libnspr4 libnss3 libpcsclite1 libpthread-stubs0-dev libsm-dev libx11-dev libxau-dev libxcb1-dev libxdmcp-dev
+  libxt-dev openjdk-17-jdk openjdk-17-jdk-headless openjdk-17-jre openjdk-17-jre-headless x11proto-dev xorg-sgml-doctools xtrans-dev
+0 upgraded, 27 newly installed, 0 to remove and 0 not upgraded.
+Need to get 124 MB of archives.
+After this operation, 294 MB of additional disk space will be used.
+Do you want to continue? [Y/n] 
+Get:1 https://deb.debian.org/debian bookworm/main amd64 ca-certificates-java all 20230710~deb12u1 [11.9 kB]
+Get:2 https://deb.debian.org/debian bookworm/main amd64 java-common all 0.74 [6,388 B]
+Get:3 https://deb.debian.org/debian bookworm/main amd64 libnspr4 amd64 2:4.35-1 [113 kB]
+Get:4 https://deb.debian.org/debian bookworm/main amd64 libnss3 amd64 2:3.87.1-1+deb12u1 [1,331 kB]
+Get:5 https://deb.debian.org/debian bookworm/main amd64 libpcsclite1 amd64 1.9.9-2 [49.7 kB]
+Get:6 https://deb.debian.org/debian bookworm/main amd64 openjdk-17-jre-headless amd64 17.0.13+11-2~deb12u1 [43.8 MB]
+Get:7 https://deb.debian.org/debian bookworm/main amd64 default-jre-headless amd64 2:1.17-74 [2,936 B]
+Get:8 https://deb.debian.org/debian bookworm/main amd64 openjdk-17-jre amd64 17.0.13+11-2~deb12u1 [209 kB]
+Get:9 https://deb.debian.org/debian bookworm/main amd64 default-jre amd64 2:1.17-74 [1,056 B]
+Get:10 https://deb.debian.org/debian bookworm/main amd64 openjdk-17-jdk-headless amd64 17.0.13+11-2~deb12u1 [71.5 MB]
+Get:11 https://deb.debian.org/debian bookworm/main amd64 default-jdk-headless amd64 2:1.17-74 [1,108 B]
+Get:12 https://deb.debian.org/debian bookworm/main amd64 openjdk-17-jdk amd64 17.0.13+11-2~deb12u1 [2,395 kB]
+Get:13 https://deb.debian.org/debian bookworm/main amd64 default-jdk amd64 2:1.17-74 [1,068 B]
+Get:14 https://deb.debian.org/debian bookworm/main amd64 fonts-dejavu-extra all 2.37-6 [1,985 kB]
+Get:15 https://deb.debian.org/debian bookworm/main amd64 libatk-wrapper-java all 0.40.0-3 [63.4 kB]
+Get:16 https://deb.debian.org/debian bookworm/main amd64 libatk-wrapper-java-jni amd64 0.40.0-3 [54.6 kB]
+Get:17 https://deb.debian.org/debian bookworm/main amd64 xorg-sgml-doctools all 1:1.11-1.1 [22.1 kB]
+Get:18 https://deb.debian.org/debian bookworm/main amd64 x11proto-dev all 2022.1-1 [599 kB]
+Get:19 https://deb.debian.org/debian bookworm/main amd64 libice-dev amd64 2:1.0.10-1 [67.1 kB]
+Get:20 https://deb.debian.org/debian bookworm/main amd64 libpthread-stubs0-dev amd64 0.4-1 [5,344 B]
+Get:21 https://deb.debian.org/debian bookworm/main amd64 libsm-dev amd64 2:1.2.3-1 [38.0 kB]
+Get:22 https://deb.debian.org/debian bookworm/main amd64 libxau-dev amd64 1:1.0.9-1 [22.9 kB]
+Get:23 https://deb.debian.org/debian bookworm/main amd64 libxdmcp-dev amd64 1:1.1.2-3 [42.2 kB]
+Get:24 https://deb.debian.org/debian bookworm/main amd64 xtrans-dev all 1.4.0-1 [98.7 kB]
+Get:25 https://deb.debian.org/debian bookworm/main amd64 libxcb1-dev amd64 1.15-1 [181 kB]
+Get:26 https://deb.debian.org/debian bookworm/main amd64 libx11-dev amd64 2:1.8.4-2+deb12u2 [837 kB]
+Get:27 https://deb.debian.org/debian bookworm/main amd64 libxt-dev amd64 1:1.2.1-1.1 [405 kB]
+Fetched 124 MB in 4s (30.6 MB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+Selecting previously unselected package ca-certificates-java.
+(Reading database ... 48507 files and directories currently installed.)
+Preparing to unpack .../00-ca-certificates-java_20230710~deb12u1_all.deb ...
+Unpacking ca-certificates-java (20230710~deb12u1) ...
+Selecting previously unselected package java-common.
+Preparing to unpack .../01-java-common_0.74_all.deb ...
+Unpacking java-common (0.74) ...
+Selecting previously unselected package libnspr4:amd64.
+Preparing to unpack .../02-libnspr4_2%3a4.35-1_amd64.deb ...
+Unpacking libnspr4:amd64 (2:4.35-1) ...
+Selecting previously unselected package libnss3:amd64.
+Preparing to unpack .../03-libnss3_2%3a3.87.1-1+deb12u1_amd64.deb ...
+Unpacking libnss3:amd64 (2:3.87.1-1+deb12u1) ...
+Selecting previously unselected package libpcsclite1:amd64.
+Preparing to unpack .../04-libpcsclite1_1.9.9-2_amd64.deb ...
+Unpacking libpcsclite1:amd64 (1.9.9-2) ...
+Selecting previously unselected package openjdk-17-jre-headless:amd64.
+Preparing to unpack .../05-openjdk-17-jre-headless_17.0.13+11-2~deb12u1_amd64.deb ...
+Unpacking openjdk-17-jre-headless:amd64 (17.0.13+11-2~deb12u1) ...
+Selecting previously unselected package default-jre-headless.
+Preparing to unpack .../06-default-jre-headless_2%3a1.17-74_amd64.deb ...
+Unpacking default-jre-headless (2:1.17-74) ...
+Selecting previously unselected package openjdk-17-jre:amd64.
+Preparing to unpack .../07-openjdk-17-jre_17.0.13+11-2~deb12u1_amd64.deb ...
+Unpacking openjdk-17-jre:amd64 (17.0.13+11-2~deb12u1) ...
+Selecting previously unselected package default-jre.
+Preparing to unpack .../08-default-jre_2%3a1.17-74_amd64.deb ...
+Unpacking default-jre (2:1.17-74) ...
+Selecting previously unselected package openjdk-17-jdk-headless:amd64.
+Preparing to unpack .../09-openjdk-17-jdk-headless_17.0.13+11-2~deb12u1_amd64.deb ...
+Unpacking openjdk-17-jdk-headless:amd64 (17.0.13+11-2~deb12u1) ...
+Selecting previously unselected package default-jdk-headless.
+Preparing to unpack .../10-default-jdk-headless_2%3a1.17-74_amd64.deb ...
+Unpacking default-jdk-headless (2:1.17-74) ...
+Selecting previously unselected package openjdk-17-jdk:amd64.
+Preparing to unpack .../11-openjdk-17-jdk_17.0.13+11-2~deb12u1_amd64.deb ...
+Unpacking openjdk-17-jdk:amd64 (17.0.13+11-2~deb12u1) ...
+Selecting previously unselected package default-jdk.
+Preparing to unpack .../12-default-jdk_2%3a1.17-74_amd64.deb ...
+Unpacking default-jdk (2:1.17-74) ...
+Selecting previously unselected package fonts-dejavu-extra.
+Preparing to unpack .../13-fonts-dejavu-extra_2.37-6_all.deb ...
+Unpacking fonts-dejavu-extra (2.37-6) ...
+Selecting previously unselected package libatk-wrapper-java.
+Preparing to unpack .../14-libatk-wrapper-java_0.40.0-3_all.deb ...
+Unpacking libatk-wrapper-java (0.40.0-3) ...
+Selecting previously unselected package libatk-wrapper-java-jni:amd64.
+Preparing to unpack .../15-libatk-wrapper-java-jni_0.40.0-3_amd64.deb ...
+Unpacking libatk-wrapper-java-jni:amd64 (0.40.0-3) ...
+Selecting previously unselected package xorg-sgml-doctools.
+Preparing to unpack .../16-xorg-sgml-doctools_1%3a1.11-1.1_all.deb ...
+Unpacking xorg-sgml-doctools (1:1.11-1.1) ...
+Selecting previously unselected package x11proto-dev.
+Preparing to unpack .../17-x11proto-dev_2022.1-1_all.deb ...
+Unpacking x11proto-dev (2022.1-1) ...
+Selecting previously unselected package libice-dev:amd64.
+Preparing to unpack .../18-libice-dev_2%3a1.0.10-1_amd64.deb ...
+Unpacking libice-dev:amd64 (2:1.0.10-1) ...
+Selecting previously unselected package libpthread-stubs0-dev:amd64.
+Preparing to unpack .../19-libpthread-stubs0-dev_0.4-1_amd64.deb ...
+Unpacking libpthread-stubs0-dev:amd64 (0.4-1) ...
+Selecting previously unselected package libsm-dev:amd64.
+Preparing to unpack .../20-libsm-dev_2%3a1.2.3-1_amd64.deb ...
+Unpacking libsm-dev:amd64 (2:1.2.3-1) ...
+Selecting previously unselected package libxau-dev:amd64.
+Preparing to unpack .../21-libxau-dev_1%3a1.0.9-1_amd64.deb ...
+Unpacking libxau-dev:amd64 (1:1.0.9-1) ...
+Selecting previously unselected package libxdmcp-dev:amd64.
+Preparing to unpack .../22-libxdmcp-dev_1%3a1.1.2-3_amd64.deb ...
+Unpacking libxdmcp-dev:amd64 (1:1.1.2-3) ...
+Selecting previously unselected package xtrans-dev.
+Preparing to unpack .../23-xtrans-dev_1.4.0-1_all.deb ...
+Unpacking xtrans-dev (1.4.0-1) ...
+Selecting previously unselected package libxcb1-dev:amd64.
+Preparing to unpack .../24-libxcb1-dev_1.15-1_amd64.deb ...
+Unpacking libxcb1-dev:amd64 (1.15-1) ...
+Selecting previously unselected package libx11-dev:amd64.
+Preparing to unpack .../25-libx11-dev_2%3a1.8.4-2+deb12u2_amd64.deb ...
+Unpacking libx11-dev:amd64 (2:1.8.4-2+deb12u2) ...
+Selecting previously unselected package libxt-dev:amd64.
+Preparing to unpack .../26-libxt-dev_1%3a1.2.1-1.1_amd64.deb ...
+Unpacking libxt-dev:amd64 (1:1.2.1-1.1) ...
+Setting up java-common (0.74) ...
+Setting up libpthread-stubs0-dev:amd64 (0.4-1) ...
+Setting up xtrans-dev (1.4.0-1) ...
+Setting up libnspr4:amd64 (2:4.35-1) ...
+Setting up libpcsclite1:amd64 (1.9.9-2) ...
+Setting up fonts-dejavu-extra (2.37-6) ...
+Setting up xorg-sgml-doctools (1:1.11-1.1) ...
+Setting up libatk-wrapper-java (0.40.0-3) ...
+Setting up ca-certificates-java (20230710~deb12u1) ...
+No JRE found. Skipping Java certificates setup.
+Setting up libnss3:amd64 (2:3.87.1-1+deb12u1) ...
+Setting up libatk-wrapper-java-jni:amd64 (0.40.0-3) ...
+Setting up openjdk-17-jre-headless:amd64 (17.0.13+11-2~deb12u1) ...
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/java to provide /usr/bin/java (java) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jpackage to provide /usr/bin/jpackage (jpackage) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/keytool to provide /usr/bin/keytool (keytool) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/rmiregistry to provide /usr/bin/rmiregistry (rmiregistry) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/lib/jexec to provide /usr/bin/jexec (jexec) in auto mode
+Processing triggers for desktop-file-utils (0.26-1) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for libc-bin (2.36-9+deb12u9) ...
+Processing triggers for man-db (2.11.2-2) ...
+Processing triggers for sgml-base (1.31) ...
+Setting up x11proto-dev (2022.1-1) ...
+Processing triggers for fontconfig (2.14.1-4) ...
+Setting up libxau-dev:amd64 (1:1.0.9-1) ...
+Setting up libice-dev:amd64 (2:1.0.10-1) ...
+Setting up libsm-dev:amd64 (2:1.2.3-1) ...
+Setting up libxdmcp-dev:amd64 (1:1.1.2-3) ...
+Setting up libxcb1-dev:amd64 (1.15-1) ...
+Setting up libx11-dev:amd64 (2:1.8.4-2+deb12u2) ...
+Setting up libxt-dev:amd64 (1:1.2.1-1.1) ...
+Processing triggers for ca-certificates-java (20230710~deb12u1) ...
+Adding debian:ACCVRAIZ1.pem
+Adding debian:AC_RAIZ_FNMT-RCM.pem
+Adding debian:AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.pem
+Adding debian:Actalis_Authentication_Root_CA.pem
+Adding debian:AffirmTrust_Commercial.pem
+Adding debian:AffirmTrust_Networking.pem
+Adding debian:AffirmTrust_Premium_ECC.pem
+Adding debian:AffirmTrust_Premium.pem
+Adding debian:Amazon_Root_CA_1.pem
+Adding debian:Amazon_Root_CA_2.pem
+Adding debian:Amazon_Root_CA_3.pem
+Adding debian:Amazon_Root_CA_4.pem
+Adding debian:ANF_Secure_Server_Root_CA.pem
+Adding debian:Atos_TrustedRoot_2011.pem
+Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068_2.pem
+Adding debian:Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+Adding debian:Baltimore_CyberTrust_Root.pem
+Adding debian:Buypass_Class_2_Root_CA.pem
+Adding debian:Buypass_Class_3_Root_CA.pem
+Adding debian:CA_Disig_Root_R2.pem
+Adding debian:Certainly_Root_E1.pem
+Adding debian:Certainly_Root_R1.pem
+Adding debian:Certigna.pem
+Adding debian:Certigna_Root_CA.pem
+Adding debian:certSIGN_Root_CA_G2.pem
+Adding debian:certSIGN_ROOT_CA.pem
+Adding debian:Certum_EC-384_CA.pem
+Adding debian:Certum_Trusted_Network_CA_2.pem
+Adding debian:Certum_Trusted_Network_CA.pem
+Adding debian:Certum_Trusted_Root_CA.pem
+Adding debian:CFCA_EV_ROOT.pem
+Adding debian:Comodo_AAA_Services_root.pem
+Adding debian:COMODO_Certification_Authority.pem
+Adding debian:COMODO_ECC_Certification_Authority.pem
+Adding debian:COMODO_RSA_Certification_Authority.pem
+Adding debian:DigiCert_Assured_ID_Root_CA.pem
+Adding debian:DigiCert_Assured_ID_Root_G2.pem
+Adding debian:DigiCert_Assured_ID_Root_G3.pem
+Adding debian:DigiCert_Global_Root_CA.pem
+Adding debian:DigiCert_Global_Root_G2.pem
+Adding debian:DigiCert_Global_Root_G3.pem
+Adding debian:DigiCert_High_Assurance_EV_Root_CA.pem
+Adding debian:DigiCert_TLS_ECC_P384_Root_G5.pem
+Adding debian:DigiCert_TLS_RSA4096_Root_G5.pem
+Adding debian:DigiCert_Trusted_Root_G4.pem
+Adding debian:D-TRUST_BR_Root_CA_1_2020.pem
+Adding debian:D-TRUST_EV_Root_CA_1_2020.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_2009.pem
+Adding debian:D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+Adding debian:emSign_ECC_Root_CA_-_C3.pem
+Adding debian:emSign_ECC_Root_CA_-_G3.pem
+Adding debian:emSign_Root_CA_-_C1.pem
+Adding debian:emSign_Root_CA_-_G1.pem
+Adding debian:Entrust.net_Premium_2048_Secure_Server_CA.pem
+Adding debian:Entrust_Root_Certification_Authority_-_EC1.pem
+Adding debian:Entrust_Root_Certification_Authority_-_G2.pem
+Adding debian:Entrust_Root_Certification_Authority_-_G4.pem
+Adding debian:Entrust_Root_Certification_Authority.pem
+Adding debian:ePKI_Root_Certification_Authority.pem
+Adding debian:e-Szigno_Root_CA_2017.pem
+Adding debian:E-Tugra_Certification_Authority.pem
+Adding debian:E-Tugra_Global_Root_CA_ECC_v3.pem
+Adding debian:E-Tugra_Global_Root_CA_RSA_v3.pem
+Adding debian:GDCA_TrustAUTH_R5_ROOT.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R4.pem
+Adding debian:GlobalSign_ECC_Root_CA_-_R5.pem
+Adding debian:GlobalSign_Root_CA.pem
+Adding debian:GlobalSign_Root_CA_-_R3.pem
+Adding debian:GlobalSign_Root_CA_-_R6.pem
+Adding debian:GlobalSign_Root_E46.pem
+Adding debian:GlobalSign_Root_R46.pem
+Adding debian:GLOBALTRUST_2020.pem
+Adding debian:Go_Daddy_Class_2_CA.pem
+Adding debian:Go_Daddy_Root_Certificate_Authority_-_G2.pem
+Adding debian:GTS_Root_R1.pem
+Adding debian:GTS_Root_R2.pem
+Adding debian:GTS_Root_R3.pem
+Adding debian:GTS_Root_R4.pem
+Adding debian:HARICA_TLS_ECC_Root_CA_2021.pem
+Adding debian:HARICA_TLS_RSA_Root_CA_2021.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+Adding debian:Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+Adding debian:HiPKI_Root_CA_-_G1.pem
+Adding debian:Hongkong_Post_Root_CA_1.pem
+Adding debian:Hongkong_Post_Root_CA_3.pem
+Adding debian:IdenTrust_Commercial_Root_CA_1.pem
+Adding debian:IdenTrust_Public_Sector_Root_CA_1.pem
+Adding debian:ISRG_Root_X1.pem
+Adding debian:ISRG_Root_X2.pem
+Adding debian:Izenpe.com.pem
+Adding debian:Microsec_e-Szigno_Root_CA_2009.pem
+Adding debian:Microsoft_ECC_Root_Certificate_Authority_2017.pem
+Adding debian:Microsoft_RSA_Root_Certificate_Authority_2017.pem
+Adding debian:NAVER_Global_Root_Certification_Authority.pem
+Adding debian:NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem
+Adding debian:OISTE_WISeKey_Global_Root_GB_CA.pem
+Adding debian:OISTE_WISeKey_Global_Root_GC_CA.pem
+Adding debian:QuoVadis_Root_CA_1_G3.pem
+Adding debian:QuoVadis_Root_CA_2_G3.pem
+Adding debian:QuoVadis_Root_CA_2.pem
+Adding debian:QuoVadis_Root_CA_3_G3.pem
+Adding debian:QuoVadis_Root_CA_3.pem
+Adding debian:Secure_Global_CA.pem
+Adding debian:SecureSign_RootCA11.pem
+Adding debian:SecureTrust_CA.pem
+Adding debian:Security_Communication_ECC_RootCA1.pem
+Adding debian:Security_Communication_RootCA2.pem
+Adding debian:Security_Communication_RootCA3.pem
+Adding debian:Security_Communication_Root_CA.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_ECC.pem
+Adding debian:SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+Adding debian:SSL.com_Root_Certification_Authority_ECC.pem
+Adding debian:SSL.com_Root_Certification_Authority_RSA.pem
+Adding debian:Starfield_Class_2_CA.pem
+Adding debian:Starfield_Root_Certificate_Authority_-_G2.pem
+Adding debian:Starfield_Services_Root_Certificate_Authority_-_G2.pem
+Adding debian:SwissSign_Gold_CA_-_G2.pem
+Adding debian:SwissSign_Silver_CA_-_G2.pem
+Adding debian:SZAFIR_ROOT_CA2.pem
+Adding debian:Telia_Root_CA_v2.pem
+Adding debian:TeliaSonera_Root_CA_v1.pem
+Adding debian:TrustCor_ECA-1.pem
+Adding debian:TrustCor_RootCert_CA-1.pem
+Adding debian:TrustCor_RootCert_CA-2.pem
+Adding debian:Trustwave_Global_Certification_Authority.pem
+Adding debian:Trustwave_Global_ECC_P256_Certification_Authority.pem
+Adding debian:Trustwave_Global_ECC_P384_Certification_Authority.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_2.pem
+Adding debian:T-TeleSec_GlobalRoot_Class_3.pem
+Adding debian:TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+Adding debian:TunTrust_Root_CA.pem
+Adding debian:TWCA_Global_Root_CA.pem
+Adding debian:TWCA_Root_Certification_Authority.pem
+Adding debian:UCA_Extended_Validation_Root.pem
+Adding debian:UCA_Global_G2_Root.pem
+Adding debian:USERTrust_ECC_Certification_Authority.pem
+Adding debian:USERTrust_RSA_Certification_Authority.pem
+Adding debian:vTrus_ECC_Root_CA.pem
+Adding debian:vTrus_Root_CA.pem
+Adding debian:XRamp_Global_CA_Root.pem
+done.
+Setting up default-jre-headless (2:1.17-74) ...
+Setting up openjdk-17-jre:amd64 (17.0.13+11-2~deb12u1) ...
+Setting up default-jre (2:1.17-74) ...
+Setting up openjdk-17-jdk-headless:amd64 (17.0.13+11-2~deb12u1) ...
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jar to provide /usr/bin/jar (jar) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jarsigner to provide /usr/bin/jarsigner (jarsigner) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/javac to provide /usr/bin/javac (javac) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/javadoc to provide /usr/bin/javadoc (javadoc) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/javap to provide /usr/bin/javap (javap) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jcmd to provide /usr/bin/jcmd (jcmd) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jdb to provide /usr/bin/jdb (jdb) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jdeprscan to provide /usr/bin/jdeprscan (jdeprscan) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jdeps to provide /usr/bin/jdeps (jdeps) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jfr to provide /usr/bin/jfr (jfr) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jimage to provide /usr/bin/jimage (jimage) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jinfo to provide /usr/bin/jinfo (jinfo) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jlink to provide /usr/bin/jlink (jlink) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jmap to provide /usr/bin/jmap (jmap) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jmod to provide /usr/bin/jmod (jmod) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jps to provide /usr/bin/jps (jps) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jrunscript to provide /usr/bin/jrunscript (jrunscript) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jshell to provide /usr/bin/jshell (jshell) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jstack to provide /usr/bin/jstack (jstack) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jstat to provide /usr/bin/jstat (jstat) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jstatd to provide /usr/bin/jstatd (jstatd) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/serialver to provide /usr/bin/serialver (serialver) in auto mode
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jhsdb to provide /usr/bin/jhsdb (jhsdb) in auto mode
+Setting up openjdk-17-jdk:amd64 (17.0.13+11-2~deb12u1) ...
+update-alternatives: using /usr/lib/jvm/java-17-openjdk-amd64/bin/jconsole to provide /usr/bin/jconsole (jconsole) in auto mode
+Setting up default-jdk-headless (2:1.17-74) ...
+Setting up default-jdk (2:1.17-74) ...
+koco@penguin:~$ sudo apt-get install sbt
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package sbt
+koco@penguin:~$ sudo apt-get install scala
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libhawtjni-runtime-java libjansi-native-java libjansi1-java libjline2-java scala-library scala-parser-combinators scala-xml
+Suggested packages:
+  scala-doc
+The following NEW packages will be installed:
+  libhawtjni-runtime-java libjansi-native-java libjansi1-java libjline2-java scala scala-library scala-parser-combinators scala-xml
+0 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.
+Need to get 25.1 MB of archives.
+After this operation, 28.6 MB of additional disk space will be used.
+Do you want to continue? [Y/n] 
+Get:1 https://deb.debian.org/debian bookworm/main amd64 libhawtjni-runtime-java all 1.18-1 [36.3 kB]
+Get:2 https://deb.debian.org/debian bookworm/main amd64 libjansi-native-java all 1.8-1 [26.0 kB]
+Get:3 https://deb.debian.org/debian bookworm/main amd64 libjansi1-java all 1.18-3 [66.5 kB]
+Get:4 https://deb.debian.org/debian bookworm/main amd64 libjline2-java all 2.14.6-5 [151 kB]
+Get:5 https://deb.debian.org/debian bookworm/main amd64 scala-library all 2.11.12-5 [9,588 kB]
+Get:6 https://deb.debian.org/debian bookworm/main amd64 scala-parser-combinators all 1.0.3-3.1 [365 kB]
+Get:7 https://deb.debian.org/debian bookworm/main amd64 scala-xml all 1.0.3-3.1 [615 kB]
+Get:8 https://deb.debian.org/debian bookworm/main amd64 scala all 2.11.12-5 [14.2 MB]
+Fetched 25.1 MB in 18s (1,360 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+Selecting previously unselected package libhawtjni-runtime-java.
+(Reading database ... 49707 files and directories currently installed.)
+Preparing to unpack .../0-libhawtjni-runtime-java_1.18-1_all.deb ...
+Unpacking libhawtjni-runtime-java (1.18-1) ...
+Selecting previously unselected package libjansi-native-java.
+Preparing to unpack .../1-libjansi-native-java_1.8-1_all.deb ...
+Unpacking libjansi-native-java (1.8-1) ...
+Selecting previously unselected package libjansi1-java.
+Preparing to unpack .../2-libjansi1-java_1.18-3_all.deb ...
+Unpacking libjansi1-java (1.18-3) ...
+Selecting previously unselected package libjline2-java.
+Preparing to unpack .../3-libjline2-java_2.14.6-5_all.deb ...
+Unpacking libjline2-java (2.14.6-5) ...
+Selecting previously unselected package scala-library.
+Preparing to unpack .../4-scala-library_2.11.12-5_all.deb ...
+Unpacking scala-library (2.11.12-5) ...
+Selecting previously unselected package scala-parser-combinators.
+Preparing to unpack .../5-scala-parser-combinators_1.0.3-3.1_all.deb ...
+Unpacking scala-parser-combinators (1.0.3-3.1) ...
+Selecting previously unselected package scala-xml.
+Preparing to unpack .../6-scala-xml_1.0.3-3.1_all.deb ...
+Unpacking scala-xml (1.0.3-3.1) ...
+Selecting previously unselected package scala.
+Preparing to unpack .../7-scala_2.11.12-5_all.deb ...
+Unpacking scala (2.11.12-5) ...
+Setting up scala-library (2.11.12-5) ...
+Setting up scala-xml (1.0.3-3.1) ...
+Setting up scala-parser-combinators (1.0.3-3.1) ...
+Setting up libhawtjni-runtime-java (1.18-1) ...
+Setting up libjansi-native-java (1.8-1) ...
+Setting up libjansi1-java (1.18-3) ...
+Setting up libjline2-java (2.14.6-5) ...
+Setting up scala (2.11.12-5) ...
+update-alternatives: using /usr/share/scala-2.11/bin/scala to provide /usr/bin/scala (scala) in auto mode
+koco@penguin:~$ scala
+Welcome to Scala 2.11.12 (OpenJDK 64-Bit Server VM, Java 17.0.13).
+Type in expressions for evaluation. Or try :help.
+  C-c C-ckoco@penguin:~$ 
+koco@penguin:~$ java -v
+Unrecognized option: -v
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+koco@penguin:~$ java --version
+openjdk 17.0.13 2024-10-15
+OpenJDK Runtime Environment (build 17.0.13+11-Debian-2deb12u1)
+OpenJDK 64-Bit Server VM (build 17.0.13+11-Debian-2deb12u1, mixed mode, sharing)
+koco@penguin:~$ curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 22.2M  100 22.2M    0     0  18.1M      0  0:00:01  0:00:01 --:--:-- 30.5M
+The current machine does not support all of the following CPU features that are required by the image: [CX8, CMOV, FXSR, MMX, SSE, SSE2, SSE3, SSSE3, SSE4_1, SSE4_2, POPCNT, LZCNT, AVX, AVX2, BMI1, BMI2, FMA].
+Please rebuild the executable with an appropriate setting of the -march option.koco@penguin:~$ curl -s https://get.coursier.io | bash -s -- -v
+
+  C-c C-c
+koco@penguin:~$ curl -s https://get.coursier.io | bash -s -- -v
+  C-c C-c
+koco@penguin:~$ echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
+echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee /etc/apt/sources.list.d/sbt_old.list
+curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo apt-key add
+sudo apt-get update
+sudo apt-get install sbt
+deb https://repo.scala-sbt.org/scalasbt/debian all main
+koco@penguin:~$ deb https://repo.scala-sbt.org/scalasbt/debian /
+koco@penguin:~$ Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+OK
+Hit:1 https://deb.debian.org/debian bookworm InRelease
+Ign:2 https://storage.googleapis.com/cros-packages/132 bookworm InRelease
+Hit:3 https://storage.googleapis.com/cros-packages/132 bookworm Release
+Hit:4 https://deb.debian.org/debian bookworm-updates InRelease
+Get:5 https://deb.debian.org/debian-security bookworm-security InRelease [48.0 kB]
+Get:7 https://scala.jfrog.io/artifactory/debian all InRelease [4,417 B]
+Ign:8 https://scala.jfrog.io/artifactory/debian  InRelease
+Get:9 https://scala.jfrog.io/artifactory/debian  Release [815 B]
+Get:10 https://scala.jfrog.io/artifactory/debian all/main amd64 Packages [3,278 B]
+Get:11 https://scala.jfrog.io/artifactory/debian  Release.gpg [821 B]
+Get:12 https://scala.jfrog.io/artifactory/debian  Packages [5,122 B]
+Fetched 62.4 kB in 7s (8,786 B/s)
+Reading package lists... Done
+W: https://repo.scala-sbt.org/scalasbt/debian/dists/all/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+W: https://repo.scala-sbt.org/scalasbt/debian/Release.gpg: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+koco@penguin:~$ pwd
+/home/koco
+koco@penguin:~$ mkdir tmp
+koco@penguin:~$ cd tmp
+koco@penguin:~/tmp$ sbt
+bash: sbt: command not found
+koco@penguin:~/tmp$ echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
+echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee /etc/apt/sources.list.d/sbt_old.list
+curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo apt-key add
+sudo apt-get update
+sudo apt-get install sbt
+deb https://repo.scala-sbt.org/scalasbt/debian all main
+koco@penguin:~/tmp$ deb https://repo.scala-sbt.org/scalasbt/debian /
+koco@penguin:~/tmp$ Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+OK
+Ign:1 https://storage.googleapis.com/cros-packages/132 bookworm InRelease
+Hit:2 https://deb.debian.org/debian bookworm InRelease
+Hit:3 https://deb.debian.org/debian bookworm-updates InRelease
+Hit:4 https://deb.debian.org/debian-security bookworm-security InRelease
+Hit:5 https://storage.googleapis.com/cros-packages/132 bookworm Release
+Hit:6 https://scala.jfrog.io/artifactory/debian all InRelease
+Ign:7 https://scala.jfrog.io/artifactory/debian  InRelease
+Hit:9 https://scala.jfrog.io/artifactory/debian  Release
+Reading package lists... Done
+W: https://repo.scala-sbt.org/scalasbt/debian/dists/all/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+W: https://repo.scala-sbt.org/scalasbt/debian/Release.gpg: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+koco@penguin:~/tmp$ sudo apt-get install sbt
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  sbt
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 20.6 kB of archives.
+After this operation, 51.2 kB of additional disk space will be used.
+Get:1 https://scala.jfrog.io/artifactory/debian all/main amd64 sbt all 1.10.7 [20.6 kB]
+Fetched 20.6 kB in 1s (17.2 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+Selecting previously unselected package sbt.
+(Reading database ... 49871 files and directories currently installed.)
+Preparing to unpack .../archives/sbt_1.10.7_all.deb ...
+Unpacking sbt (1.10.7) ...
+Setting up sbt (1.10.7) ...
+Creating system group: sbt
+Creating system user: sbt in sbt with sbt daemon-user and shell /bin/false
+Processing triggers for man-db (2.11.2-2) ...
+koco@penguin:~/tmp$ sbt
+downloading sbt launcher 1.10.7
+copying runtime jar...
+[error] Neither build.sbt nor a 'project' directory in the current directory: /home/koco/tmp
+[error] run 'sbt new', touch build.sbt, or run 'sbt --allow-empty'.
+[error] 
+[error] To opt out of this check, create /home/koco/.config/sbt/sbtopts with:
+[error] --allow-empty
+koco@penguin:~/tmp$ cd ../src/koco/
+koco@penguin:~/src/koco$ ./sbt.sh clean package
+Unrecognized VM option 'CMSClassUnloadingEnabled'
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+koco@penguin:~/src/koco$ sbt
+[info] [launcher] getting org.scala-sbt sbt 1.10.2  (this may take some time)...
+[info] [launcher] getting Scala 2.12.19 (for sbt)...
+[info] welcome to sbt 1.10.2 (Debian Java 17.0.13)
+[info] loading settings for project koco-build from plugins.sbt ...
+[info] loading project definition from /home/koco/src/koco/project
+[info] loading settings for project dist from build.sbt ...
+[info] set current project to Kojo (in build file:/home/koco/src/koco/)
+[info] sbt server started at local:///home/koco/.sbt/1.0/server/57a83421b2c4be424789/sock
+[info] started sbt server
+sbt:Kojo> compile
+[info] compiling 219 Scala sources and 23 Java sources to /home/koco/src/koco/target/scala-2.13/classes ...
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/core/InputAware.scala:37:70: value BUTTON1_MASK in class InputEvent is deprecated (since 9)
+[warn]     h.setEventFilter(new PInputEventFilter(java.awt.event.InputEvent.BUTTON1_MASK))
+[warn]                                                                      ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/core/InputAware.scala:50:70: value BUTTON1_MASK in class InputEvent is deprecated (since 9)
+[warn]     h.setEventFilter(new PInputEventFilter(java.awt.event.InputEvent.BUTTON1_MASK))
+[warn]                                                                      ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/core/InputAware.scala:63:70: value BUTTON1_MASK in class InputEvent is deprecated (since 9)
+[warn]     h.setEventFilter(new PInputEventFilter(java.awt.event.InputEvent.BUTTON1_MASK))
+[warn]                                                                      ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/core/InputAware.scala:77:70: value BUTTON1_MASK in class InputEvent is deprecated (since 9)
+[warn]     h.setEventFilter(new PInputEventFilter(java.awt.event.InputEvent.BUTTON1_MASK))
+[warn]                                                                      ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/kmath/rational.scala:43:75: value ROUND_HALF_UP in class BigDecimal is deprecated (since 9)
+[warn]     def toNumeric(scale: Int = 5) = rep.bigDecimalValue(scale, BigDecimal.ROUND_HALF_UP)
+[warn]                                                                           ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/OutputPane.scala:149:77: value CTRL_MASK in class InputEvent is deprecated (since 9)
+[warn]     val controlNumPlus = KeyStroke.getKeyStroke(KeyEvent.VK_ADD, InputEvent.CTRL_MASK)
+[warn]                                                                             ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/OutputPane.scala:150:75: value CTRL_MASK in class InputEvent is deprecated (since 9)
+[warn]     val controlPlus = KeyStroke.getKeyStroke(KeyEvent.VK_PLUS, InputEvent.CTRL_MASK)
+[warn]                                                                           ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/OutputPane.scala:166:83: value CTRL_MASK in class InputEvent is deprecated (since 9)
+[warn]     val controlNumMinus = KeyStroke.getKeyStroke(KeyEvent.VK_SUBTRACT, InputEvent.CTRL_MASK)
+[warn]                                                                                   ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/OutputPane.scala:167:77: value CTRL_MASK in class InputEvent is deprecated (since 9)
+[warn]     val controlMinus = KeyStroke.getKeyStroke(KeyEvent.VK_MINUS, InputEvent.CTRL_MASK)
+[warn]                                                                             ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/ScriptEditor.scala:444:75: value CTRL_MASK in class InputEvent is deprecated (since 9)
+[warn]   val controlNumPlus = KeyStroke.getKeyStroke(KeyEvent.VK_ADD, InputEvent.CTRL_MASK)
+[warn]                                                                           ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/ScriptEditor.scala:445:73: value CTRL_MASK in class InputEvent is deprecated (since 9)
+[warn]   val controlPlus = KeyStroke.getKeyStroke(KeyEvent.VK_PLUS, InputEvent.CTRL_MASK)
+[warn]                                                                         ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/ScriptEditor.scala:465:81: value CTRL_MASK in class InputEvent is deprecated (since 9)
+[warn]   val controlNumMinus = KeyStroke.getKeyStroke(KeyEvent.VK_SUBTRACT, InputEvent.CTRL_MASK)
+[warn]                                                                                 ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/ScriptEditor.scala:466:75: value CTRL_MASK in class InputEvent is deprecated (since 9)
+[warn]   val controlMinus = KeyStroke.getKeyStroke(KeyEvent.VK_MINUS, InputEvent.CTRL_MASK)
+[warn]                                                                           ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/canvas/SpriteCanvas.scala:175:51: value SHIFT_MASK in class InputEvent is deprecated (since 9)
+[warn]   panHandler.getEventFilter.setNotMask(InputEvent.SHIFT_MASK)
+[warn]                                                   ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/canvas/SpriteCanvas.scala:176:63: value BUTTON1_MASK in class InputEvent is deprecated (since 9)
+[warn]   zoomHandler.setEventFilter(new PInputEventFilter(InputEvent.BUTTON1_MASK | InputEvent.SHIFT_MASK))
+[warn]                                                               ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/canvas/SpriteCanvas.scala:176:89: value SHIFT_MASK in class InputEvent is deprecated (since 9)
+[warn]   zoomHandler.setEventFilter(new PInputEventFilter(InputEvent.BUTTON1_MASK | InputEvent.SHIFT_MASK))
+[warn]                                                                                         ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/OutputPane.scala:178:71: method getMenuShortcutKeyMask in class Toolkit is deprecated (since 10)
+[warn]       KeyStroke.getKeyStroke(KeyEvent.VK_C, Toolkit.getDefaultToolkit.getMenuShortcutKeyMask),
+[warn]                                                                       ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/ScriptEditor.scala:112:85: method getMenuShortcutKeyMask in class Toolkit is deprecated (since 10)
+[warn]       KeyStroke.getKeyStroke(KeyEvent.VK_CLOSE_BRACKET, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()),
+[warn]                                                                                     ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/ScriptEditor.scala:825:35: method viewToModel in class JTextComponent is deprecated (since 9)
+[warn]             val offset = codePane.viewToModel(pt);
+[warn]                                   ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/lite/trace/Tracing.scala:93:18: overriding method info0 in class Reporter is deprecated (since 2.13.12): extend scala.tools.nsc.reporters.FilteringReporter, and override doReport instead
+[warn]     override def info0(position: Position, msg: String, severity: Severity, force: Boolean): Unit = {
+[warn]                  ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/livecoding/ColorMakerManipulatorHexRgb.scala:126:29: method modelToView in class JTextComponent is deprecated (since 9)
+[warn]     val rect = ctx.codePane.modelToView(offset)
+[warn]                             ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/livecoding/ColorMakerManipulatorHsv.scala:108:29: method modelToView in class JTextComponent is deprecated (since 9)
+[warn]     val rect = ctx.codePane.modelToView(offset)
+[warn]                             ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/livecoding/ColorMakerManipulatorKnownHsl.scala:121:29: method modelToView in class JTextComponent is deprecated (since 9)
+[warn]     val rect = ctx.codePane.modelToView(offset)
+[warn]                             ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/livecoding/ColorManipulator.scala:111:29: method modelToView in class JTextComponent is deprecated (since 9)
+[warn]     val rect = ctx.codePane.modelToView(offset)
+[warn]                             ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/livecoding/NumberManipulator.scala:115:29: method modelToView in class JTextComponent is deprecated (since 9)
+[warn]     val rect = ctx.codePane.modelToView(offset)
+[warn]                             ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/picture/picimage.scala:131:20: method newInstance in class Class is deprecated (since 9)
+[warn]     val fltr = cls.newInstance().asInstanceOf[BufferedImageOp]
+[warn]                    ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/util/Utils.scala:912:35: method modelToView in class JTextComponent is deprecated (since 9)
+[warn]     comp.scrollRectToVisible(comp.modelToView(offset))
+[warn]                                   ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/xscala/CompilerAndRunner.scala:141:18: overriding method info0 in class Reporter is deprecated (since 2.13.12): extend scala.tools.nsc.reporters.FilteringReporter, and override doReport instead
+[warn]     override def info0(position: Position, msg: String, severity: Severity, force: Boolean): Unit = {
+[warn]                  ^
+[warn] /home/koco/src/koco/src/main/scala/net/kogics/kojo/xscala/CompilerAndRunner.scala:402:18: overriding method info0 in class Reporter is deprecated (since 2.13.12): extend scala.tools.nsc.reporters.FilteringReporter, and override doReport instead
+[warn]     override def info0(position: Position, msg: String, severity: Severity, force: Boolean): Unit = {}
+[warn]                  ^
+[warn] 29 warnings found
+[info] done compiling
+[success] Total time: 176 s (02:56), completed Jan 18, 2025, 10:34:55 PM
+sbt:Kojo> test
+[info] compiling 34 Scala sources to /home/koco/src/koco/target/scala-2.13/test-classes ...
+[info] done compiling
+Unrecognized VM option 'UseConcMarkSweepGC'
+Error: Could not create the Java Virtual Machine.
+Error: A fatal exception has occurred. Program will exit.
+[error] Could not accept connection from test agent: class java.net.SocketException: Socket closed
+[error] stack trace is suppressed; run last Test / test for the full output
+[info] Run completed in 386 milliseconds.
+[info] Total number of tests run: 0
+[info] Suites: completed 0, aborted 0
+[info] Tests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0
+[info] No tests were executed.
+[error] Error during tests:
+[error] 	Running java with options -classpath /home/koco/src/koco/target/scala-2.13/test-classes:/home/koco/src/koco/target/scala-2.13/classes:/home/koco/src/koco/lib/AppleJavaExtensions.jar:/home/koco/src/koco/lib/autocomplete.jar:/home/koco/src/koco/lib/docking-frames-common.jar:/home/koco/src/koco/lib/docking-frames-core.jar:/home/koco/src/koco/lib/image-filters.jar:/home/koco/src/koco/lib/jdi.jar:/home/koco/src/koco/lib/jfugue-4.1.jar:/home/koco/src/koco/lib/jl1.0.1.jar:/home/koco/src/koco/lib/jlatexmath.jar:/home/koco/src/koco/lib/jssc.jar:/home/koco/src/koco/lib/libtiled.jar:/home/koco/src/koco/lib/rithica.jar:/home/koco/src/koco/lib/rstaui.jar:/home/koco/src/koco/lib/rsyntaxtextarea.jar:/home/koco/src/koco/lib/table-layout.jar:/home/koco/src/koco/lib/scalariform.jar:./scala-tr/build/pack/lib/scala-library.jar:./scala-tr/build/pack/lib/scala-compiler.jar:./scala-tr/build/pack/lib/scala-reflect.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.13/2.6.16/akka-actor_2.13-2.6.16.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-swing_2.13/2.1.1/scala-swing_2.13-2.1.1.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.13/1.2.0/scala-xml_2.13-1.2.0.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.13/1.1.2/scala-parser-combinators_2.13-1.1.2.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/piccolo2d/piccolo2d-core/1.3.1/piccolo2d-core-1.3.1.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/piccolo2d/piccolo2d-extras/1.3.1/piccolo2d-extras-1.3.1.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/com/formdev/flatlaf/3.4/flatlaf-3.4.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/com/vividsolutions/jts/1.13/jts-1.13.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/com/h2database/h2/1.3.168/h2-1.3.168.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/javax/xml/bind/jaxb-api/2.2/jaxb-api-2.2.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/com/sun/xml/bind/jaxb-impl/2.2/jaxb-impl-2.2.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/httpcomponents/client5/httpclient5/5.1.3/httpclient5-5.1.3.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-jdk14/1.7.25/slf4j-jdk14-1.7.25.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalatest/scalatest_2.13/3.0.8/scalatest_2.13-3.0.8.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalactic/scalactic_2.13/3.0.8/scalactic_2.13-3.0.8.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/junit/junit/4.10/junit-4.10.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jmock/jmock/2.5.1/jmock-2.5.1.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jmock/jmock-legacy/2.5.1/jmock-legacy-2.5.1.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jmock/jmock-junit4/2.5.1/jmock-junit4-2.5.1.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/objenesis/objenesis/1.0/objenesis-1.0.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/hamcrest/hamcrest-library/1.1/hamcrest-library-1.1.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalacheck/scalacheck_2.13/1.14.3/scalacheck_2.13-1.14.3.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-parallel-collections_2.13/1.2.0/scala-parallel-collections_2.13-1.2.0.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.12/java-diff-utils-4.12.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.26.3/jline-3.26.3.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/config/1.4.0/config-1.4.0.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-java8-compat_2.13/1.0.0/scala-java8-compat_2.13-1.0.0.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/javax/activation/activation/1.1/activation-1.1.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/httpcomponents/core5/httpcore5/5.1.3/httpcore5-5.1.3.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/apache/httpcomponents/core5/httpcore5-h2/5.1.3/httpcore5-h2-5.1.3.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/home/koco/.cache/coursier/v1/https/repo1.maven.org/maven2/commons-codec/commons-codec/1.15/commons-codec-1.15.jar:/home/koco/.sbt/boot/scala-2.12.19/org.scala-sbt/sbt/1.10.2/test-agent-1.10.2.jar:/home/koco/.sbt/boot/scala-2.12.19/org.scala-sbt/sbt/1.10.2/test-interface-1.0.jar sbt.ForkMain 33325 failed with exit code 1
+[error] (Test / test) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 33 s, completed Jan 18, 2025, 10:41:06 PM
+sbt:Kojo> run
+
+Multiple main classes detected. Select one to run:
+ [1] net.kogics.kojo.lite.DesktopMain
+ [2] net.kogics.kojo.lite.Main
+ [3] net.kogics.kojo.lite.NewKojoInstance
+
+Enter number: 2
+2
+[info] running (fork) net.kogics.kojo.lite.Main 
+[error] Unrecognized VM option 'UseConcMarkSweepGC'
+[error] Error: Could not create the Java Virtual Machine.
+[error] Error: A fatal exception has occurred. Program will exit.
+[error] Nonzero exit code returned from runner: 1
+[error] (Compile / run) Nonzero exit code returned from runner: 1
+[error] Total time: 8 s, completed Jan 18, 2025, 10:41:47 PM
+sbt:Kojo> sbt:Kojo> 
+sbt:Kojo> exit
+[info] shutting down sbt server
+koco@penguin:~/src/koco$ exit
+exit
+
+Process shell finished

@@ -2,13 +2,17 @@
 
 ;; ----- ido-last-directory-list -----
 (
- ("/home/koco/" . ".emacs.d/")
+ ("/home/koco/src/" . "kojo/")
+ ("/home/koco/" . "src/")
  ("/home/koco/src/kojo/installer/" . "licenses/")
  ("/home/koco/src/kojo/" . "installer/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/koco/"
+ "/home/koco/src/koco/"
+ "/home/koco/src/"
  "/home/koco/.emacs.d/"
  "/home/koco/src/kojo/installer/licenses/"
  "/home/koco/src/kojo/"
@@ -16,15 +20,27 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "java-sbt-scala-installation"
+ "README.md"
+ "sudo-apt-list.txt"
+ ".gitconfig"
+ ".gitignore"
+ ".emacs"
  "init.el"
  "LICENSE"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/koco/.emacs.d/" (26507 60792 368932 842000) "init.el" "ido.last" "elpa/" "auto-save-list/" "eln-cache/" "../" "./")
+ ("/home/koco/" (26508 29105 386222 734000) ".sbt/" "tmp/" ".scala_history" "cs" "sudo-apt-list.txt" "sudo-apt-list.txt~" ".lesshst" ".gitconfig" ".emacs" ".bash_history" "README.md" ".Xauthority" ".ssh/" "README.github.token" "sudo_apt_list.out" "kojo" ".sudo_as_admin_successful" ".sommelierrc" ".python_history" ".gitignore" ".viminfo" ".profile" ".bashrc" ".bash_aliases" "LICENSE" ".git/" ".emacs.d/" "workFiles/" "gcodeFiles/" "EZCUT0.6.25" "Downloads/" "src/" ".gervill/" ".kojo/" ".gnome/" "Koco/" ".java/" ".cache/" ".local/" ".config/" ".bash_logout" "../" "./")
 
- ("/home/koco/" (26507 60645 274597 241000) ".Xauthority" ".lesshst" ".bash_aliases" ".bash_aliases~" ".bashrc" ".bashrc~" ".emacs.d/" "sudo_apt_list.out" ".viminfo" ".python_history" "kojo" "workFiles/" "gcodeFiles/" "EZCUT0.6.25" "Downloads/" "src/" ".gervill/" ".sudo_as_admin_successful" ".bash_history" ".kojo/" ".gnome/" "Koco/" ".java/" ".cache/" ".local/" ".sommelierrc" ".profile" ".config/" ".bash_logout" "../" "./")
+ ("/home/koco/src/koco/" (26508 29225 146218 985000) ".bsp/" "target/" "build.sbt" ".scalafmt.conf" "stage-i4j-installer" "src/" "scala-tr/" "sbt.sh" "sbt-launch.1.5.5.jar" "project/" "makezip.sh" "make-windows-zip.sh" "localization.md" "lib/" "l10n-level2/" "installer/" "installer.i4j/" "README.md" "LICENSE" ".gitignore" ".git/" "../" "./")
+
+ ("/home/koco/src/" (26508 26119 304918 19000) "koco/" "sayilar1.kojo" "cpp/" "devinim/" "kojo-denemeler/" "../" "./")
+
+ ("/home/koco/.emacs.d/" (26508 25230 818945 811000) "transient/" "init.el" "ido.last" "magit-installation-warnings.txt" "elpa/" "auto-save-list/" "eln-cache/" "../" "./")
+
+ ("/usr/share/fonts/chromeos/" (26503 18518 974019 629000) "monotype/" "ipa-jp/" "google-sans/" "croscore/" "notocjk/" "ko-nanum/" "morisawa/" "roboto/" "tibt-jomolhari/" "./" "lohit-cros/" "noto/" "crosextra/" "../")
 
  ("/usr/share/info/emacs/" (26379 33 927113 413000) "transient.info.gz" "efaq.info.gz" "../" "./")
 

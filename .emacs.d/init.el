@@ -1,5 +1,5 @@
 (message "Emacs 28.2 in Crostini in acer chromebook spin 311 -- 2025.01.18")
-(message "Crouton did not work. This is too new an OS rev. :()."
+(message "Crouton did not work. This is too new an OS rev. :().")
 (message "In init.el in .emacs.d in HOME which is /home/koco")
 (ido-mode 't)
 
