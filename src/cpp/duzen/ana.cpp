@@ -3,14 +3,26 @@ using namespace std;
 #include "yazi.h"
 void emojiYaz();
 
-Yazi spiral(int kolSayisi, int yon);
-
 Yazi deneme();
 
 int main() {
   emojiYaz();
   const Satir bosluk(" ");
-  cout << spiral(8, 0).yana(bosluk.yana(spiral(6, 0))) << endl
+  using Sarmal::sarmal;
+  vector<Yazi> sarmallar, dortluler;
+  for(int kolSayisi=2; kolSayisi<10; kolSayisi++)
+    sarmallar.push_back(sarmal(kolSayisi,0));
+  for (int yon{1}; yon < 4; ++yon) 
+    dortluler.push_back(sarmal(4, yon));
+  Yazi hepsi{sarmal(1, 0)}, hepsiDortlu{sarmal(4, 0)};
+  for (auto s : sarmallar) 
+    hepsi = hepsi.yana(bosluk).yana(s);
+  for (auto s : dortluler) 
+    hepsiDortlu = hepsiDortlu.yana(bosluk).yana(s);
+  
+  cout << hepsi << endl
+       << hepsiDortlu << endl << endl
+       << sarmal(11, 0).yana(bosluk.yana(sarmal(12, 0))) << endl
        << deneme() << endl;
   emojiYaz();
   return 0;
@@ -46,27 +58,6 @@ Yazi deneme() {
   
 #endif
 
-}
-
-Satir kose("+");
-Satir bosluk(" ");
-
-Yazi spiral(int kolSayisi, int yon) {
-  if (kolSayisi == 1) return kose;
-  Yazi sp(spiral(kolSayisi - 1, (yon + 3) % 4));
-  Sade yatay('-', sp.en(), 1);
-  Sade dikey('|', 1, sp.boy());
-  switch(yon) {
-  case 0: // sola dogru uzanan kolla basla
-    return kose.yana(yatay).alta(sp.yana(bosluk));
-  case 1: // yukari dogru
-    return sp.alta(bosluk).yana(kose.alta(dikey));
-  case 2: // saga dogru
-    return bosluk.yana(sp).alta(yatay.yana(kose));
-  case 3: // asagi dogru
-    return dikey.alta(kose).yana(bosluk.alta(sp));
-  default: throw("switch default");
-  }
 }
 
 void emojiYaz() {

@@ -42,3 +42,8 @@ public:
       yazi.push_back(satir);
   }
 };
+
+namespace Sarmal {
+  // saat yonunun tersine donus:
+  Yazi sarmal(int kolSayisi, int yon);
+};

@@ -32,3 +32,26 @@ Yazi Yazi::yana(Yazi o) const {
     dizin.push_back(bu2.yazi[i] + o2.yazi[i]);
   return Yazi(dizin);
 }
+
+namespace Sarmal {
+  Satir kose("+");
+  Satir bosluk(" ");
+};
+
+Yazi Sarmal::sarmal(int kolSayisi, int yon) {
+  if (kolSayisi == 1) return kose;
+  Yazi srml(sarmal(kolSayisi - 1, (yon + 3) % 4));
+  Sade yatay('-', srml.en(), 1);
+  Sade dikey('|', 1, srml.boy());
+  switch(yon) {
+  case 0: // sola dogru uzanan kolla basla
+    return kose.yana(yatay).alta(srml.yana(bosluk));
+  case 1: // yukari dogru
+    return srml.alta(bosluk).yana(kose.alta(dikey));
+  case 2: // saga dogru
+    return bosluk.yana(srml).alta(yatay.yana(kose));
+  case 3: // asagi dogru
+    return dikey.alta(kose).yana(bosluk.alta(srml));
+  default: throw("switch default");
+  }
+}
