@@ -226,3 +226,68 @@ java
 uname -a
 sudo apt install curl
 top
+gs
+git push
+gs
+sudo apt-get install curl
+sudo apt-get install zip
+curl -s "https://get.sdkman.io" | bash
+sdk help
+bash
+sdk help
+sdk install leiningen
+pwd
+bash
+lein
+pwd
+ls
+cd src
+ls
+mkdir clj
+cd clj
+lein new app clojure-noob
+ls
+cd clojure-noob/
+lein run
+cd ~/
+mv .emacs .emacs.d/ tmp/
+exit
+cd src/clj/
+cd clojure-noob/
+gs
+lein
+sdk install lein
+sdk install leiningen
+sdk update leiningen
+leiningen
+lein
+lein
+pwd
+which lein
+echo $JAVA_CMD
+$JAVA_CMD -version
+emacs &
+j
+jobs
+exit
+gs
+emacs &
+ls .emacs.d/
+rm -rf .emacs.d/
+ls tmp/
+ls -a tmp/
+mv Downloads/emacs-for-clojure-book1.zip .
+unzip emacs-for-clojure-book1.zip 
+ls
+mv emacs-for-clojure-book1 .emacs.d
+ls .emacs.d/
+echo "[200~{:user {:plugins [[cider/cider-nrepl "0.8.1"]]}}
+emacs &
+lein
+bash
+exit
+lein
+scala
+:help
+ls
+gs

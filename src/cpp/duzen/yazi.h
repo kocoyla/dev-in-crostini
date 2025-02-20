@@ -25,6 +25,8 @@ public:
   Yazi yana(Yazi o) const;
   Yazi genislet(int yeniEn) const;
   Yazi uzat(int yeniBoy) const;
+  Yazi operator+(Yazi saga) const { return Yazi{yana(saga)}; }
+  Yazi operator%(Yazi obur) const { return Yazi{alta(obur)}; }
 };
 
 ostream& operator<<(ostream &o, const Yazi& y);

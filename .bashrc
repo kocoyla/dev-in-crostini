@@ -110,3 +110,9 @@ fi
 # ~/Koco/bin/kojo &
 
 echo Kocoyu çalıştırmak için koco takma adını dene.
+
+export JAVA_CMD=/home/koco/Koco/jre/bin/java 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

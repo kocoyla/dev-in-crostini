@@ -1,0 +1,29 @@
+Loading /etc/emacs/site-start.d/00debian.el (source)...done
+Loading /home/koco/.emacs.d/customizations/shell-integration.el (source)...done
+Loading /home/koco/.emacs.d/customizations/navigation.el (source)...
+Cleaning up the recentf list...done (0 removed)
+.emacs.d/elpa/ido-completing-read+-20180628.244/ido-completing-read+.el: Warning: Use keywords rather than deprecated positional arguments to `define-minor-mode' [2 times]
+.emacs.d/elpa/smex-20151212.2209/smex.el: Warning: (lambda nil \.\.\.) quoted with ' rather than with #'
+Loading /home/koco/.emacs.d/customizations/navigation.el (source)...done
+Loading /home/koco/.emacs.d/customizations/ui.el (source)...
+.emacs.d/customizations/ui.el: Warning: (lambda nil \.\.\.) quoted with ' rather than with #'
+Loading /home/koco/.emacs.d/customizations/ui.el (source)...done
+Loading /home/koco/.emacs.d/customizations/editing.el (source)...done
+Loading /home/koco/.emacs.d/customizations/misc.el (source)...done
+Loading /home/koco/.emacs.d/customizations/elisp-editing.el (source)...done
+Loading /home/koco/.emacs.d/customizations/setup-clojure.el (source)...
+.emacs.d/elpa/clojure-mode-20191112.1948/clojure-mode.el: Warning: ‘project-roots’ is an obsolete generic function (as of 0.3.0); use ‘project-root’ instead.
+Loading /home/koco/.emacs.d/customizations/setup-clojure.el (source)...done
+Loading /home/koco/.emacs.d/customizations/setup-js.el (source)...done
+For information about GNU Emacs and the GNU system, type C-h C-a.
+C-x C-g is undefined
+Quit
+Undo
+(New file)
+../.emacs.d/elpa/rainbow-delimiters-20170929.1132/rainbow-delimiters.el: Warning: Use keywords rather than deprecated positional arguments to `define-minor-mode'
+Mark set
+Saving file /home/koco/.lein/profiles.clj...
+Wrote /home/koco/.lein/profiles.clj
+funcall-interactively: End of buffer
+Mark set [2 times]
+Quit

@@ -1,6 +1,11 @@
 README.github.token
 cs
 tmp/
+EMACS/.emacs.d/eln-cache/
+**/*.o
+**/a.out
+src/cpp/duzen/yaz
+src/cpp/talha/ciz
 .g8/
 .ivy2/
 .sbt/

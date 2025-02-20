@@ -7,7 +7,7 @@ Yazi deneme();
 
 int main() {
   emojiYaz();
-  const Satir bosluk(" ");
+  Satir bosluk(" ");
   using Sarmal::sarmal;
   vector<Yazi> sarmallar, dortluler;
   for(int kolSayisi=2; kolSayisi<10; kolSayisi++)
@@ -19,10 +19,11 @@ int main() {
     hepsi = hepsi.yana(bosluk).yana(s);
   for (auto s : dortluler) 
     hepsiDortlu = hepsiDortlu.yana(bosluk).yana(s);
-  
-  cout << hepsi << endl
-       << hepsiDortlu << endl << endl
-       << sarmal(11, 0).yana(bosluk.yana(sarmal(12, 0))) << endl
+  hepsiDortlu = hepsiDortlu % bosluk % hepsiDortlu;
+  const Yazi bosSutun{bosluk.yana(bosluk)};
+  cout << bosSutun + hepsi << endl
+       << bosSutun + hepsiDortlu << endl << endl
+       << bosSutun + sarmal(15, 0) + bosluk + sarmal(19, 1) + bosluk + sarmal(15, 2) << endl
        << deneme() << endl;
   emojiYaz();
   return 0;
