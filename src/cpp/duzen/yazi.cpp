@@ -45,13 +45,13 @@ Yazi Sarmal::sarmal(int kolSayisi, int yon) {
   Sade dikey('|', 1, srml.boy());
   switch(yon) {
   case 0: // sola dogru uzanan kolla basla
-    return (kose + yatay) / (srml + bosluk);
+    return (kose+yatay) / (srml+bosluk);
   case 1: // yukari dogru
-    return srml / bosluk + kose / dikey;
+    return srml/bosluk + kose/dikey;
   case 2: // saga dogru
-    return bosluk + srml / (yatay + kose);
+    return (bosluk+srml) / (yatay+kose);
   case 3: // asagi dogru
-    return dikey / kose + bosluk / srml;
+    return dikey/kose + bosluk/srml;
   default: throw("switch default");
   }
 }

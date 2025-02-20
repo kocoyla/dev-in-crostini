@@ -12,6 +12,15 @@ ana.o: ana.cpp
 
 calistir:
 	./yaz
+test:
+	./yaz |& tee yaz.out
+	diff -q yaz.out yaz.out.golden
+diff:
+	diff yaz.out yaz.out.golden
+
+updateGolden:
+	./yaz |& tee yaz.out.golden
+
 clean:
 	rm -rf *.o yaz yaz.out
 
