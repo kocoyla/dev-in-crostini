@@ -19,7 +19,7 @@ int main() {
     hepsi = hepsi.yana(bosluk).yana(s);
   for (auto s : dortluler) 
     hepsiDortlu = hepsiDortlu.yana(bosluk).yana(s);
-  hepsiDortlu = hepsiDortlu % bosluk % hepsiDortlu;
+  hepsiDortlu = hepsiDortlu / bosluk / hepsiDortlu;
   const Yazi bosSutun{bosluk.yana(bosluk)};
   cout << bosSutun + hepsi << endl
        << bosSutun + hepsiDortlu << endl << endl
